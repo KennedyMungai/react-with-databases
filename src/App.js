@@ -5,6 +5,10 @@ import './App.css';
 
 function App()
 {
+  const fetchMoviesHandler = () => 
+  {
+    fetch('https://swapi.dev/api/films/')
+  }
 
   return (
     <React.Fragment>
@@ -12,7 +16,7 @@ function App()
         <button>Fetch Movies</button>
       </section>
       <section>
-        <MoviesList movies={ } />
+        <MoviesList />
       </section>
     </React.Fragment>
   );
