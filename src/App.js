@@ -48,7 +48,13 @@ function App()
 
   function addMovieHandler(movie)
   {
-    console.log(movie);
+    fetch('https://simple-react-backend-default-rtdb.firebaseio.com/movies.json', {
+      method: 'POST',
+      body: JSON.stringify(movie),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
   }
 
   let content = <p>Found no movies.</p>;
