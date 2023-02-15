@@ -7,7 +7,13 @@ function App()
 {
   const fetchMoviesHandler = () => 
   {
-    fetch('https://swapi.dev/api/films/')
+    fetch('https://swapi.dev/api/films/').then((response) =>
+    {
+      return response.json()
+    }).then((data) =>
+    {
+      return data.results
+    })
   }
 
   return (
