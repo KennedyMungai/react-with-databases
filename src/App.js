@@ -14,7 +14,7 @@ function App()
       return response.json()
     }).then((data) =>
     {
-      return data.results
+      setMovies(data.results)
     })
   }
 
@@ -24,7 +24,7 @@ function App()
         <button>Fetch Movies</button>
       </section>
       <section>
-        <MoviesList />
+        <MoviesList movies={movies} />
       </section>
     </React.Fragment>
   );
