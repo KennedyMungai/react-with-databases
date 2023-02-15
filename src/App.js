@@ -26,6 +26,15 @@ function App()
 
       const loadedMovies = []
 
+      for (const key in data)
+      {
+        loadedMovies.push({
+          id: key,
+          title: data[key].title,
+          openingText: data[key].openingText
+        })
+      }
+
       const transformedMovies = data.results.map((movieData) =>
       {
         return {
