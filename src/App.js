@@ -9,24 +9,21 @@ function App()
 
   const fetchMoviesHandler = async () => 
   {
-    await fetch('https://swapi.dev/api/films/').then((response) =>
+    const response = await fetch('https://swapi.dev/api/films/')
+    const data = response.json()
+    const transformedMovies = data.results.map((movieData) =>
     {
-      return response.json()
-    }).then((data) =>
-    {
-      const transformedMovies = data.results.map((movieData) =>
-      {
-        return {
-          id: movieData.episode_id,
-          title: movieData.title,
-          openingText: movieData.opening_crawl,
-          release_date: movieData.release_date
-        }
-      })
-
-      setMovies(transformedMovies)
+      return {
+        id: movieData.episode_id,
+        title: movieData.title,
+        openingText: movieData.opening_crawl,
+        release_date: movieData.release_date
+      }
     })
+
+    setMovies(transformedMovies)
   }
+
 
   return (
     <React.Fragment>
