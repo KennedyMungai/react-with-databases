@@ -25,6 +25,8 @@ function App()
     })
 
     setMovies(transformedMovies)
+
+    setIsLoading(false)
   }
 
 
